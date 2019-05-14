@@ -13,7 +13,7 @@ from riskofrain2api.data.serializers import ItemSerializer,\
                                             AbilitySerializer,\
                                             EnemySerializer,\
                                             LevelSerializer
-from riskofrain2api.data import scrapper
+from riskofrain2api.data.scrapper.core import get_data
 
 
 # Create your views here.
@@ -26,7 +26,7 @@ class ItemViewSet(viewsets.ModelViewSet):
 
 @csrf_exempt
 def scrap_items(request):
-    scrapper.get_data()
+    get_data()
 
     return HttpResponse(status=201)
 
