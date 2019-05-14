@@ -25,7 +25,7 @@ class ItemViewSet(viewsets.ModelViewSet):
 
 
 @csrf_exempt
-def scrap_items():
+def scrap_items(request):
     scrapper.get_data()
 
     return HttpResponse(status=201)

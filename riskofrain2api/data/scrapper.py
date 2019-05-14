@@ -31,6 +31,15 @@ def get_achievements():
         else:
             new_achievement.icon = icon['src']
 
+        if fields[1].has_attr('a'):
+            new_achievement.name = remove_linebreak(fields[1].find("a").string)
+        else:
+            new_achievement.name = remove_linebreak(fields[1].text)
+
+        new_achievement.description = remove_linebreak(remove_linebreak(fields[2].text))
+
+        new_achievement.save()
+
 
 def get_items():
 
@@ -73,5 +82,6 @@ def get_items():
 
 def get_data():
     Achievement.objects.all().delete()
+    Item.objects.all().delete()
     get_achievements()
     get_items()
