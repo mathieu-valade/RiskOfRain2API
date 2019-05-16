@@ -14,4 +14,10 @@ COPY . /riskofrain2api/
 
 #CMD ["python","manage.py", "runserver"]
 EXPOSE 8000
-CMD ["gunicorn", "riskofrain2api.wsgi"]
+
+RUN python manage.py collectstatic --noinput
+
+ENV HOST 0.0.0.0
+ENV PORT 8000
+
+CMD ["gunicorn", "-b", "$HOST:$PORT", "riskofrain2api.wsgi"]
