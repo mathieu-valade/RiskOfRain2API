@@ -21,8 +21,10 @@ test:
     - python manage.py test
 
 deploy:
+  image:
   before_script:
   script:
-    - git push heroku HEAD:master
+    - git remote add heroku https://heroku:$HEROKU_API_KEY@git.heroku.com/riskofrain2wiki.git
+    - git push -f heroku master
   only:
   - master
