@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    environment:
+      DATABASE_URL: psql://postgres:postgres@db:5432/postgres
+      SECRET_KEY: toto
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  db:
+    image: postgres

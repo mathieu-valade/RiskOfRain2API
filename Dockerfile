@@ -17,7 +17,4 @@ EXPOSE 8000
 
 RUN python manage.py collectstatic --noinput
 
-ENV HOST 0.0.0.0
-ENV PORT 8000
-
-CMD ["gunicorn", "-b", "$HOST:$PORT", "riskofrain2api.wsgi"]
+CMD ["gunicorn", "-b", "0.0.0.0:8000", "riskofrain2api.wsgi"]
