@@ -12,9 +12,7 @@ lint:
   script:
     - flake8
 
-deploy:
-  before_script:
-  script:
-    - git push heroku master
-
-  
+# deploy:
+#   before_script:
+#   script:
+#     - git push heroku master
