@@ -14,7 +14,6 @@ lint:
 
 deploy:
   before_script:
-    -
   script:
     - git push heroku master
 
