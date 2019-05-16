@@ -16,13 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from riskofrain2api.data.views import scrap_items,\
-                                        ItemViewSet,\
-                                        AchievementViewSet,\
-                                        CharacterViewSet,\
-                                        AbilityViewSet,\
-                                        EnemyViewSet,\
-                                        LevelViewSet
+from rest_framework.documentation import include_docs_urls
+from riskofrain2api.data.views import (
+    ItemViewSet,
+    AchievementViewSet,
+    CharacterViewSet,
+    AbilityViewSet,
+    EnemyViewSet,
+    LevelViewSet
+)
+
 
 ROUTER = routers.DefaultRouter()
 ROUTER.register(r'items', ItemViewSet)
@@ -34,7 +37,8 @@ ROUTER.register(r'levels', LevelViewSet)
 
 
 urlpatterns = [
+    path('docs/', include_docs_urls(title="RoR2Api documentation")),
     path('', include(ROUTER.urls)),
-    path('scrapper', scrap_items),
+    # path('scrapper', scrap_items),
     path('admin/', admin.site.urls),
 ]

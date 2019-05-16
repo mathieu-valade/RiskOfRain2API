@@ -1,34 +1,27 @@
-from django.http import HttpResponse
-from django.views.decorators.csrf import csrf_exempt
 from rest_framework import viewsets
-from riskofrain2api.data.models import Item,\
-                                        Achievement,\
-                                        Character,\
-                                        Ability,\
-                                        Enemy,\
-                                        Level
-from riskofrain2api.data.serializers import ItemSerializer,\
-                                            AchievementSerializer,\
-                                            CharacterSerializer,\
-                                            AbilitySerializer,\
-                                            EnemySerializer,\
-                                            LevelSerializer
-from riskofrain2api.data.scrapper.core import get_data
+from riskofrain2api.data.models import (
+    Item,
+    Achievement,
+    Character,
+    Ability,
+    Enemy,
+    Level
+)
 
+from riskofrain2api.data.serializers import (
+    ItemSerializer,
+    AchievementSerializer,
+    CharacterSerializer,
+    AbilitySerializer,
+    EnemySerializer,
+    LevelSerializer
+)
 
-# Create your views here.
 
 class ItemViewSet(viewsets.ModelViewSet):
     queryset = Item.objects.all()
     serializer_class = ItemSerializer
     http_method_names = ['get']
-
-
-@csrf_exempt
-def scrap_items(request):
-    get_data()
-
-    return HttpResponse(status=201)
 
 
 class AchievementViewSet(viewsets.ModelViewSet):
