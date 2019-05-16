@@ -4,10 +4,14 @@ FROM python:3.6
 # to the terminal with out buffering it first
 ENV PYTHONUNBUFFERED 1
 
-RUN mkdir /riskofrain2api
 WORKDIR /riskofrain2api
 
-ADD . /riskofrain2api/
+COPY requirements.txt requirements.txt
 
 RUN pip install -r requirements.txt
-CMD ["python", "manage.py", "runserver"]
+
+COPY . /riskofrain2api/
+
+#CMD ["python","manage.py", "runserver"]
+EXPOSE 8000
+CMD ["gunicorn", "riskofrain2api.wsgi"]
