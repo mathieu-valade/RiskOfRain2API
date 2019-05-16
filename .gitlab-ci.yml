@@ -7,8 +7,8 @@ stages:
 before_script:
   - pip install -r requirements.txt
 
-#services:
-#  - postgres
+services:
+  - postgres
 
 lint:
   before_script:
@@ -23,6 +23,6 @@ test:
 deploy:
   before_script:
   script:
-    - git push heroku master
+    - git push heroku HEAD:master
   only:
   - master
