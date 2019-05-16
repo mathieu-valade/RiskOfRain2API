@@ -1,4 +1,8 @@
 image: python:3
+stages:
+  - lint
+  - test
+  - deploy
 
 before_script:
   - pip install -r requirements.txt
@@ -12,7 +16,13 @@ lint:
   script:
     - flake8
 
-# deploy:
-#   before_script:
-#   script:
-#     - git push heroku master
+test:
+  script:
+    - python manage.py test
+
+deploy:
+  before_script:
+  script:
+    - git push heroku master
+  only:
+  - master
