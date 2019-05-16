@@ -50,9 +50,9 @@ def get_characters():
         for child in description_div.children:
             child_tag = child.name
             print(child_tag)
-            if child_tag is 'dl':
+            if child_tag == 'dl':
                 continue
-            if child_tag is 'h2':
+            if child_tag == 'h2':
                 break
 
             if isinstance(child.string, str):
