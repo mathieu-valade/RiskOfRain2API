@@ -1,0 +1,5 @@
+build:
+  docker:
+    riskofrain2api: Dockerfile
+run:
+  riskofrain2api: python manager.py runserver

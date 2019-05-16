@@ -10,4 +10,3 @@ WORKDIR /riskofrain2api
 ADD . /riskofrain2api/
 
 RUN pip install -r requirements.txt
-RUN python manage.py runserver
