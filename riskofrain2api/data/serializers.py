@@ -1,12 +1,10 @@
 from rest_framework import serializers
-from riskofrain2api.data.models import (
-    Achievement,
-    Item,
-    Character,
-    Ability,
-    Enemy,
-    Level
-)
+from .models.ability import Ability
+from .models.achievement import Achievement
+from .models.character import Character
+from .models.enemy import Enemy
+from .models.item import Item
+from .models.level import Level
 
 
 class AchievementSerializer(serializers.ModelSerializer):
