@@ -25,6 +25,6 @@ deploy:
   before_script:
   script:
     - git remote add heroku https://heroku:$HEROKU_API_KEY@git.heroku.com/riskofrain2wiki.git
-    - git push heroku master
+    - git push heroku HEAD:master
   only:
   - master
