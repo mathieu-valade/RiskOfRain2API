@@ -93,7 +93,10 @@ WSGI_APPLICATION = 'riskofrain2api.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': env.db(engine='django.db.backends.postgresql_psycopg2'),
+    'default': env.db(
+        default='',
+        engine='django.db.backends.postgresql_psycopg2'
+    ),
 }
 
 
