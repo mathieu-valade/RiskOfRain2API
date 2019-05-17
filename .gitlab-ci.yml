@@ -18,6 +18,7 @@ lint:
 
 test:
   script:
+    - python manage.py migrate
     - python manage.py test
 
 deploy:

@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 import djcelery
 import environ
+
 env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False)
@@ -86,7 +87,7 @@ WSGI_APPLICATION = 'riskofrain2api.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': env.db(default='sqlite:////tmp/my-tmp-sqlite.db'),
+    'default': env.db(engine='django.db.backends.postgresql_psycopg2'),
 }
 
 
