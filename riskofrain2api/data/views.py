@@ -1,12 +1,11 @@
 from rest_framework import viewsets
-from riskofrain2api.data.serializers import (
-    ItemSerializer,
-    AchievementSerializer,
-    CharacterSerializer,
-    AbilitySerializer,
-    EnemySerializer,
-    LevelSerializer
-)
+
+from .serializers.ability import AbilitySerializer
+from .serializers.achievement import AchievementSerializer
+from .serializers.character import CharacterSerializer
+from .serializers.enemy import EnemySerializer
+from .serializers.item import ItemSerializer
+from .serializers.level import LevelSerializer
 
 from .models.ability import Ability
 from .models.achievement import Achievement
