@@ -1,6 +1,5 @@
 image: python:3
 stages:
-  - lint
   - test
   - deploy
 
@@ -11,17 +10,19 @@ services:
   - postgres
 
 lint:
+  stage: test
   before_script:
     - pip install flake8
   script:
     - flake8
 
 test:
+  stage: test
   script:
     - python manage.py test
 
 deploy:
-  image:
+  stage: deploy
   before_script:
   script:
     - git remote add heroku https://heroku:$HEROKU_API_KEY@git.heroku.com/riskofrain2wiki.git
