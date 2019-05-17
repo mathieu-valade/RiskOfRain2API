@@ -19,6 +19,7 @@ lint:
 test:
   stage: test
   script:
+    - export DATABASE_URL=postgres://postgres:@postgres:5432/python-test-app
     - python manage.py test
 
 deploy:
