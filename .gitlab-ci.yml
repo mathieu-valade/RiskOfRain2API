@@ -39,5 +39,4 @@ deploy_prod:
     - git remote add heroku https://heroku:$HEROKU_API_KEY@git.heroku.com/riskofrain2wiki.git
     - git push heroku HEAD:master
   only:
-  - master
   - tag
