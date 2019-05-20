@@ -1,0 +1,42 @@
+image: python:3
+stages:
+  - test
+  - deploy_staging
+  - deploy_prod
+
+before_script:
+  - pip install -r requirements.txt
+
+services:
+  - postgres
+
+lint:
+  stage: test
+  before_script:
+    - pip install flake8
+  script:
+    - flake8
+
+test:
+  stage: test
+  script:
+    - export DATABASE_URL=postgres://postgres:@postgres:5432/python-test-app
+    - python manage.py test
+
+deploy_staging:
+  stage: deploy_staging
+  before_script:
+  script:
+    - git remote add heroku https://heroku:$HEROKU_API_KEY@git.heroku.com/staging-riskofrain2wiki.git
+    - git push heroku HEAD:master
+  only:
+    - master
+
+deploy_prod:
+  stage: deploy_prod
+  before_script:
+  script:
+    - git remote add heroku https://heroku:$HEROKU_API_KEY@git.heroku.com/riskofrain2wiki.git
+    - git push heroku HEAD:master
+  only:
+    - tags

@@ -28,12 +28,12 @@ from riskofrain2api.data.views import (
 
 
 ROUTER = routers.DefaultRouter()
-ROUTER.register(r'items', ItemViewSet)
-ROUTER.register(r'achievements', AchievementViewSet)
-ROUTER.register(r'characters', CharacterViewSet)
-ROUTER.register(r'abilities', AbilityViewSet)
-ROUTER.register(r'enemies', EnemyViewSet)
-ROUTER.register(r'levels', LevelViewSet)
+ROUTER.register('items', ItemViewSet)
+ROUTER.register('achievements', AchievementViewSet)
+ROUTER.register('characters', CharacterViewSet)
+ROUTER.register('abilities', AbilityViewSet)
+ROUTER.register('enemies', EnemyViewSet)
+ROUTER.register('levels', LevelViewSet)
 
 
 urlpatterns = [
