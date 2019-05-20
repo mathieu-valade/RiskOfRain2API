@@ -5,4 +5,4 @@ from ..models.ability import Ability
 class AbilitySerializer(serializers.ModelSerializer):
     class Meta:
         model = Ability
-        fields = ('icon', 'description', 'cooldown', 'character')
+        fields = ('icon','name', 'description', 'cooldown', 'character')
