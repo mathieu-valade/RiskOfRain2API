@@ -1,4 +1,6 @@
 from rest_framework import viewsets
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
 from .serializers.ability import AbilitySerializer
 from .serializers.achievement import AchievementSerializer
@@ -13,6 +15,15 @@ from .models.character import Character
 from .models.enemy import Enemy
 from .models.item import Item
 from .models.level import Level
+
+from .scrapper.core import get_data
+
+
+@api_view(['POST'])
+def scrap_data(request):
+    get_data()
+
+    return Response(status=200)
 
 
 class ItemViewSet(viewsets.ModelViewSet):

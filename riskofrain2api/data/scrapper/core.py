@@ -13,12 +13,19 @@ from riskofrain2api.data.scrapper.characters import (
     get_characters
 )
 
+from riskofrain2api.data.scrapper.enemies import (
+    clear_enemies,
+    get_enemies
+)
+
 
 def get_data():
     clear_achievements()
     clear_items()
     clear_characters()
+    clear_enemies()
 
-    get_achievements()
-    get_items()
-    get_characters()
+    # get_achievements()
+    # get_items()
+    # get_characters()
+    get_enemies()

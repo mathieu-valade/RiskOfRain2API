@@ -44,21 +44,7 @@ def get_characters():
 
         character_html = requests.get(base_page + character_page)
         character_soup = BeautifulSoup(character_html.content, 'html.parser')
-        description_div = character_soup.find("div", {'id': 'mw-content-text'})
-        description = ""
 
-        for child in description_div.children:
-            child_tag = child.name
-            print(child_tag)
-            if child_tag == 'dl':
-                continue
-            if child_tag == 'h2':
-                break
-
-            if isinstance(child.string, str):
-                description += child.string
-
-        new_character.description = description
         base_hp_div = character_soup.find("div", {'data-source': 'BaseHP'})
         base_hp = base_hp_div.find('div').text
         new_character.health = base_hp
