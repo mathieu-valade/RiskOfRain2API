@@ -1,3 +1,4 @@
+from .ability import Ability
 from .achievement import Achievement
 from .item import Item
 from .character import Character
