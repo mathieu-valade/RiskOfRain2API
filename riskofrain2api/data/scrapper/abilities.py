@@ -60,7 +60,7 @@ def get_abilities():
             # )
             if len(ability_fields) > 1:
                 new_ability.description = remove_linebreak(
-                   ability_fields[1].text
+                    ability_fields[1].text
                 )
 
             new_ability.save()

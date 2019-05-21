@@ -9,7 +9,8 @@ def clear_enemies():
 
 
 def get_enemies():
-    page = 'https://riskofrain.fandom.com/wiki/Enemies_%26_Bosses_(Risk_of_Rain_2)'
+    page = 'https://riskofrain.fandom.com/wiki/'\
+        'Enemies_%26_Bosses_(Risk_of_Rain_2)'
 
     html = requests.get(page)
     soup = BeautifulSoup(html.content, 'html.parser')

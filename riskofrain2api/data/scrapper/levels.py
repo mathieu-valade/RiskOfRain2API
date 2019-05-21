@@ -31,7 +31,7 @@ def get_levels():
                 new_level.save()
                 new_level = Level()
             new_level.name = child.find('b').text
-            
+
         elif new_level is not None and child.name == "p":
             text = remove_linebreak(child.text)
             if text.startswith('\"') and text.endswith('\"'):
