@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from ..models.achievement import Achievement
+from riskofrain2api.data.models import Achievement
 
 
 class AchievementSerializer(serializers.ModelSerializer):

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from ..models.item import Item
+from riskofrain2api.data.models import Item
 
 
 class ItemSerializer(serializers.ModelSerializer):

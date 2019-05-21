@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from ..models.level import Level
+from riskofrain2api.data.models import Level
 
 
 class LevelSerializer(serializers.ModelSerializer):

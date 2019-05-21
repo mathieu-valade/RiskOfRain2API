@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from ..models.character import Character
+from riskofrain2api.data.models import Character
 
 
 class CharacterSerializer(serializers.ModelSerializer):
