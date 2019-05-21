@@ -23,10 +23,9 @@ from riskofrain2api.data.views import (
     CharacterViewSet,
     AbilityViewSet,
     EnemyViewSet,
-    LevelViewSet
+    LevelViewSet,
+    ScraperViewSet
 )
-
-from riskofrain2api.data.views import scrap_data
 
 
 ROUTER = routers.DefaultRouter()
@@ -36,11 +35,11 @@ ROUTER.register('characters', CharacterViewSet)
 ROUTER.register('abilities', AbilityViewSet)
 ROUTER.register('enemies', EnemyViewSet)
 ROUTER.register('levels', LevelViewSet)
+ROUTER.register('scraper', ScraperViewSet, base_name='scraper')
 
 
 urlpatterns = [
     path('docs/', include_docs_urls(title="RoR2Api documentation")),
     path('', include(ROUTER.urls)),
-    path('scrapper', scrap_data),
     path('admin/', admin.site.urls),
 ]
