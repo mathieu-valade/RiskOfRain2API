@@ -27,14 +27,17 @@ def get_levels():
         if child.name == "h3":
             if new_level is None:
                 new_level = Level()
-                new_level.name = child.find('b').text
             else:
                 new_level.save()
-                new_level = None
-
+                new_level = Level()
+            new_level.name = child.find('b').text
+            
         elif new_level is not None and child.name == "p":
             text = remove_linebreak(child.text)
             if text.startswith('\"') and text.endswith('\"'):
                 new_level.title = text[1:-1]
             else:
-                new_level.description += text
+                descriptions = [new_level.description, text]
+                new_level.description += ' '.join(filter(None, descriptions))
+
+    new_level.save()
