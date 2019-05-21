@@ -1,2 +1,0 @@
-## RiskOfRain2 API
-.
