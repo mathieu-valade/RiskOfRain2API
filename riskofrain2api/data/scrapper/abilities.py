@@ -1,9 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
-from threading import Thread
 from riskofrain2api.data.scrapper.helper import (
     remove_linebreak,
-    render_page
 )
 from riskofrain2api.data.models import (
     Ability,
