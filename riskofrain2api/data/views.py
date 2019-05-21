@@ -2,19 +2,23 @@ from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from .serializers.ability import AbilitySerializer
-from .serializers.achievement import AchievementSerializer
-from .serializers.character import CharacterSerializer
-from .serializers.enemy import EnemySerializer
-from .serializers.item import ItemSerializer
-from .serializers.level import LevelSerializer
+from .serializers import (
+    AbilitySerializer,
+    AchievementSerializer,
+    CharacterSerializer,
+    EnemySerializer,
+    ItemSerializer,
+    LevelSerializer
+)
 
-from .models.ability import Ability
-from .models.achievement import Achievement
-from .models.character import Character
-from .models.enemy import Enemy
-from .models.item import Item
-from .models.level import Level
+from .models import (
+    Ability,
+    Achievement,
+    Character,
+    Enemy,
+    Item,
+    Level
+)
 
 from .scrapper.core import get_data
 

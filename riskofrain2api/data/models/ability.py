@@ -1,5 +1,5 @@
 from django.db import models
-from .character import Character
+from riskofrain2api.data.models import Character
 
 
 class Ability(models.Model):

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from ..models.enemy import Enemy
+from riskofrain2api.data.models import Enemy
 
 
 class EnemySerializer(serializers.ModelSerializer):

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from ..models.ability import Ability
+from riskofrain2api.data.models import Ability
 
 
 class AbilitySerializer(serializers.ModelSerializer):
