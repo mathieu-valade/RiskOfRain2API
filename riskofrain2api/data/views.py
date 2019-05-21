@@ -20,7 +20,7 @@ from .models import (
     Level
 )
 
-from .scrapper.core import get_data
+from .scraper.core import get_data
 
 
 @api_view(['POST'])

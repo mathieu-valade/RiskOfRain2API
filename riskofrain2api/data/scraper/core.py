@@ -1,29 +1,29 @@
-from riskofrain2api.data.scrapper.achievements import (
+from riskofrain2api.data.scraper.achievements import (
     clear_achievements,
     get_achievements,
 )
 
-from riskofrain2api.data.scrapper.items import (
+from riskofrain2api.data.scraper.items import (
     clear_items,
     get_items,
 )
 
-from riskofrain2api.data.scrapper.characters import (
+from riskofrain2api.data.scraper.characters import (
     clear_characters,
     get_characters,
 )
 
-from riskofrain2api.data.scrapper.abilities import (
+from riskofrain2api.data.scraper.abilities import (
     clear_abilities,
     get_abilities,
 )
 
-from riskofrain2api.data.scrapper.enemies import (
+from riskofrain2api.data.scraper.enemies import (
     clear_enemies,
     get_enemies,
 )
 
-from riskofrain2api.data.scrapper.levels import (
+from riskofrain2api.data.scraper.levels import (
     clear_levels,
     get_levels,
 )
