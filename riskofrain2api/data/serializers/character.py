@@ -5,4 +5,4 @@ from riskofrain2api.data.models import Character
 class CharacterSerializer(serializers.ModelSerializer):
     class Meta:
         model = Character
-        fields = ('icon', 'name', 'health', 'description')
+        fields = ('icon', 'name', 'health')

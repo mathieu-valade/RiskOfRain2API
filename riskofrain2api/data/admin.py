@@ -1,7 +1,6 @@
-from django.contrib import admin
+# from django.contrib import admin
 
 # Register your models here.
-
 from import_export import resources
 from riskofrain2api.data.models import (
     Ability,
