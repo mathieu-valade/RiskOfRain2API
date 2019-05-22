@@ -24,7 +24,8 @@ from riskofrain2api.data.views import (
     AbilityViewSet,
     EnemyViewSet,
     LevelViewSet,
-    ScraperViewSet
+    ScraperViewSet,
+    DataVersionViewSet
 )
 
 
@@ -36,6 +37,7 @@ ROUTER.register('abilities', AbilityViewSet)
 ROUTER.register('enemies', EnemyViewSet)
 ROUTER.register('levels', LevelViewSet)
 ROUTER.register('scraper', ScraperViewSet, base_name='scraper')
+ROUTER.register('dataversions', DataVersionViewSet)
 
 
 urlpatterns = [

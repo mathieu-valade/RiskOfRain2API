@@ -9,3 +9,4 @@ whitenoise
 django-environ
 psycopg2-binary
 flake8
+django-import-export
