@@ -72,7 +72,7 @@ MIDDLEWARE = [
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 NOSE_ARGS = [
-    '--with-coverage',
+    '--with-coverage', '--cover-package=riskofrain2api'
 ]
 
 ROOT_URLCONF = 'riskofrain2api.urls'
