@@ -20,11 +20,7 @@ class DataVersionViewSet(viewsets.ModelViewSet):
     http_method_names = ['get', 'post']
 
     def create(self, request):
-        body = {}
-        try:
-            body = json.loads(request.body)
-        except:
-            pass
+        body = request.body
 
         if 'command' in body:
             if body['command'] == 'update':
@@ -36,8 +32,6 @@ class DataVersionViewSet(viewsets.ModelViewSet):
             elif body['command'] == 'clear':
                 clear_data()
 
-        serializer = self.get_serializer(data=self.queryset)
-        if serializer.is_valid():
-            return Response(serializer.data, status=200)
-
-        return Response(status=400)
+        queryset = DataVersion.objects.all()
+        serializer = DataVersionSerializer(queryset, many=True)
+        return Response(serializer.data, status=200)
