@@ -1,0 +1,3 @@
+[report]
+omit =
+    riskofrain2api/*/migrations/*

@@ -29,7 +29,7 @@ from riskofrain2api.data.scraper.levels import (
 )
 
 
-def get_data():
+def clear_data():
     clear_achievements()
     clear_items()
     clear_characters()
@@ -37,9 +37,16 @@ def get_data():
     clear_enemies()
     clear_levels()
 
+
+def get_data():
     get_achievements()
     get_items()
     get_characters()
     get_abilities()
     get_enemies()
     get_levels()
+
+
+def clean_get_data():
+    clear_data()
+    get_data()

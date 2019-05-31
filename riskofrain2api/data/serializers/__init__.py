@@ -4,3 +4,4 @@ from .character import CharacterSerializer
 from .enemy import EnemySerializer
 from .item import ItemSerializer
 from .level import LevelSerializer
+from .data_version import DataVersionSerializer
