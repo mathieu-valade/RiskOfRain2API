@@ -28,8 +28,6 @@ from riskofrain2api.data.scraper.levels import (
     get_levels,
 )
 
-from riskofrain2api.data.data_access.data_version import export_data
-
 
 def clear_data():
     clear_achievements()

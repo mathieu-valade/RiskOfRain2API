@@ -8,4 +8,5 @@ def idseq(model_class):
 def reset_sequence(model_class, value=1):
     cursor = connection.cursor()
     sequence = idseq(model_class)
-    cursor.execute("ALTER SEQUENCE {} RESTART WITH {};".format(sequence, value))
+    cursor.execute("ALTER SEQUENCE {} RESTART WITH {};"
+                   .format(sequence, value))

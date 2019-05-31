@@ -1,4 +1,3 @@
-import json
 from rest_framework import viewsets
 from riskofrain2api.data.serializers import DataVersionSerializer
 from rest_framework.response import Response

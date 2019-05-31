@@ -2,8 +2,6 @@
 
 # Register your models here.
 from import_export import resources
-from import_export.fields import Field
-from import_export.widgets import ForeignKeyWidget
 from riskofrain2api.data.models import (
     Ability,
     Achievement,

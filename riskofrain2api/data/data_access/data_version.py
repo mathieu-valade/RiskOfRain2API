@@ -1,5 +1,4 @@
 import os
-import random
 from tablib import Dataset
 from import_export import resources
 from riskofrain2api.data.models import DataVersion
