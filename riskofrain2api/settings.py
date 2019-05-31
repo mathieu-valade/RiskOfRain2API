@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'djcelery',
     'riskofrain2api.data',
+    'django_nose',
 ]
 
 MIDDLEWARE = [
@@ -66,6 +67,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+NOSE_ARGS = [
+    '--with-coverage', '--cover-package=riskofrain2api'
 ]
 
 ROOT_URLCONF = 'riskofrain2api.urls'
@@ -145,4 +152,6 @@ STATIC_URL = '/static/'
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+if DEBUG:
+    STATICFILES_STORAGE = \
+        'whitenoise.storage.CompressedManifestStaticFilesStorage'

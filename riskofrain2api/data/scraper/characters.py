@@ -46,7 +46,7 @@ def get_characters():
         character_soup = BeautifulSoup(character_html.content, 'html.parser')
 
         base_hp_div = character_soup.find("div", {'data-source': 'BaseHP'})
-        base_hp = base_hp_div.find('div').text
+        base_hp = base_hp_div.find('div').text.replace(u"\u00A0", " ")
         new_character.health = base_hp
 
         new_character.save()
