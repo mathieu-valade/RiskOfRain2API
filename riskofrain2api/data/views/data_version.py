@@ -19,7 +19,7 @@ class DataVersionViewSet(viewsets.ModelViewSet):
     http_method_names = ['get', 'post']
 
     def create(self, request):
-        body = request.body
+        body = request.data
 
         if 'command' in body:
             if body['command'] == 'update':
