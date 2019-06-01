@@ -26,6 +26,9 @@ from riskofrain2api.data.views import (
     LevelViewSet,
     DataVersionViewSet
 )
+from riskofrain2api.wiki.views import (
+    BuildViewSet
+)
 
 
 ROUTER = routers.DefaultRouter()
@@ -36,6 +39,7 @@ ROUTER.register('abilities', AbilityViewSet)
 ROUTER.register('enemies', EnemyViewSet)
 ROUTER.register('levels', LevelViewSet)
 ROUTER.register('dataversions', DataVersionViewSet)
+ROUTER.register('build', BuildViewSet, basename='build')
 
 
 urlpatterns = [
