@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 import djcelery
 import environ
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
 env = environ.Env(
     # set casting, default value
@@ -33,6 +35,11 @@ SECRET_KEY = env('SECRET_KEY', default="toto")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
+
+if not DEBUG:
+    sentry_sdk.init(
+        dsn="https://fa44469627ae4e4f89f07a1a8cd4ebb3@sentry.io/1472939",
+        integrations=[DjangoIntegration()])
 
 ALLOWED_HOSTS = [
     'localhost',

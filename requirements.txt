@@ -12,3 +12,4 @@ flake8
 django-import-export
 django-nose
 coverage
+sentry-sdk
