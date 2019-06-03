@@ -1,9 +1,9 @@
+from django.core.exceptions import ObjectDoesNotExist
 from riskofrain2api.wiki.parser import parse_description
 from riskofrain2api.data.models import (
     Item,
     Achievement,
 )
-from django.core.exceptions import ObjectDoesNotExist
 
 
 def get_stats(item_name, item_count):

@@ -38,6 +38,9 @@ DEBUG = env('DEBUG')
 
 SENTRY_URL = env('SENTRY_URL', default="toto")
 
+USE_LOCKDOWN = env('USE_LOCKDOWN', default='False') == 'True'
+
+
 if not DEBUG:
     sentry_sdk.init(
         dsn=SENTRY_URL,
@@ -77,6 +80,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+if USE_LOCKDOWN:
+    INSTALLED_APPS += ('lockdown', )
+    MIDDLEWARE += ('lockdown.middleware.LockdownMiddleware', )
+    LOCKDOWN_PASSWORDS = env('LOCKDOWN_PASSWORDS')
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 

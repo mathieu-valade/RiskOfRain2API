@@ -13,3 +13,4 @@ django-import-export
 django-nose
 coverage
 sentry-sdk
+django-lockdown
