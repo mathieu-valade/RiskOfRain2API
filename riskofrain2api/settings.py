@@ -36,9 +36,11 @@ SECRET_KEY = env('SECRET_KEY', default="toto")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
+SENTRY_URL = env('SENTRY_URL', default="toto")
+
 if not DEBUG:
     sentry_sdk.init(
-        dsn="https://fa44469627ae4e4f89f07a1a8cd4ebb3@sentry.io/1472939",
+        dsn=SENTRY_URL,
         integrations=[DjangoIntegration()])
 
 ALLOWED_HOSTS = [
