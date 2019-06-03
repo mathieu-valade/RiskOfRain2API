@@ -1,6 +1,9 @@
 from rest_framework import viewsets
 from rest_framework.response import Response
-from riskofrain2api.wiki.build import get_stats
+from riskofrain2api.wiki.build import (
+    get_stats,
+    get_achievements,
+)
 
 
 class BuildViewSet(viewsets.ViewSet):
@@ -9,10 +12,14 @@ class BuildViewSet(viewsets.ViewSet):
         item_list = request.data
 
         stat_list = []
+        achievement_list = []
 
         for key, value in item_list.items():
             stat = get_stats(key, value)
             if stat is not None:
                 stat_list.append(stat)
+            achievement = get_achievements(key)
+            if achievement is not None:
+                achievement_list.append(achievement)
 
-        return Response(stat_list)
+        return Response({"stats": stat_list, "achievements": achievement_list})
