@@ -17,7 +17,10 @@ from riskofrain2api.data.models import (
     Enemy,
     Item,
     Level,
-    reset_sequence
+)
+
+from riskofrain2api.data.scraper.core import (
+    clear_data
 )
 
 
@@ -63,15 +66,19 @@ def import_data(version):
     if not os.path.isdir(filename):
         return
 
-    for name, model_class in MODEL_CLASS.items():
-        reset_sequence(model_class)
-        resource = resources.modelresource_factory(model=model_class)()
-        dataset = Dataset()
-        import_file = open(f'{filename}/{name}')
-        dataset.load(import_file.read())
-        dataset.append_col(col=range(1, dataset.height + 1), header='id')
+    clear_data()
 
-        result = resource.import_data(dataset, dry_run=True, raise_errors=True)
-        if not result.has_errors():
-            print("no errors")
-            resource.import_data(dataset, dry_run=False, raise_errors=True)
+    for name, model_class in MODEL_CLASS.items():
+        try:
+            resource = resources.modelresource_factory(model=model_class)()
+            dataset = Dataset()
+            import_file = open(f'{filename}/{name}')
+            dataset.load(import_file.read())
+            dataset.append_col(col=range(1, dataset.height + 1), header='id')
+
+            result = resource.import_data(dataset, dry_run=True,
+                                          raise_errors=True)
+            if not result.has_errors():
+                resource.import_data(dataset, dry_run=False, raise_errors=True)
+        except FileNotFoundError:
+            pass
