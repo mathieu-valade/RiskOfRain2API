@@ -4,11 +4,13 @@ from riskofrain2api.data.scraper.helper import remove_linebreak
 from riskofrain2api.data.models import (
     Ability,
     Character,
+    reset_sequence
 )
 
 
 def clear_abilities():
     Ability.objects.all().delete()
+    reset_sequence(Ability)
 
 
 def get_abilities():

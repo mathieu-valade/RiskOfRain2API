@@ -1,11 +1,15 @@
 import requests
 from bs4 import BeautifulSoup
 from riskofrain2api.data.scraper.helper import remove_linebreak
-from riskofrain2api.data.models import Enemy
+from riskofrain2api.data.models import (
+    Enemy,
+    reset_sequence
+)
 
 
 def clear_enemies():
     Enemy.objects.all().delete()
+    reset_sequence(Enemy)
 
 
 def get_enemies():

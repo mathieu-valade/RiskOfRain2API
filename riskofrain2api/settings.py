@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 import djcelery
 import environ
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
 env = environ.Env(
     # set casting, default value
@@ -33,6 +35,16 @@ SECRET_KEY = env('SECRET_KEY', default="toto")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
+
+SENTRY_URL = env('SENTRY_URL', default="toto")
+
+USE_LOCKDOWN = env('USE_LOCKDOWN', default='False') == 'True'
+
+
+if not DEBUG:
+    sentry_sdk.init(
+        dsn=SENTRY_URL,
+        integrations=[DjangoIntegration()])
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -68,6 +80,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+if USE_LOCKDOWN:
+    INSTALLED_APPS += ('lockdown', )
+    MIDDLEWARE += ('lockdown.middleware.LockdownMiddleware', )
+    LOCKDOWN_PASSWORDS = env('LOCKDOWN_PASSWORDS')
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 

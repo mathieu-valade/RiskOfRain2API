@@ -4,11 +4,13 @@ from riskofrain2api.data.scraper.helper import remove_linebreak
 from riskofrain2api.data.models import (
     Item,
     Achievement,
+    reset_sequence
 )
 
 
 def clear_items():
     Item.objects.all().delete()
+    reset_sequence(Item)
 
 
 def get_items():
