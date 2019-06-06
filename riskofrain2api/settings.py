@@ -68,6 +68,7 @@ INSTALLED_APPS = [
     'djcelery',
     'riskofrain2api.data',
     'django_nose',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
