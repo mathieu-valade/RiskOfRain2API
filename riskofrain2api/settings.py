@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'riskofrain2api.data',
+    'riskofrain2api.wiki',
     'django_nose',
     'drf_yasg',
 ]
@@ -86,7 +87,7 @@ if USE_LOCKDOWN:
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 NOSE_ARGS = [
-    '--with-coverage', '--cover-package=riskofrain2api'
+    '--with-coverage', '--cover-package=riskofrain2api',
 ]
 
 ROOT_URLCONF = 'riskofrain2api.urls'

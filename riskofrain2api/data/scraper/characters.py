@@ -1,4 +1,5 @@
 import requests
+from django.core.exceptions import ObjectDoesNotExist
 from bs4 import BeautifulSoup
 from riskofrain2api.data.scraper.helper import remove_linebreak
 from riskofrain2api.data.models import (
@@ -40,9 +41,11 @@ def get_characters():
         else:
             achievement_name = remove_linebreak(fields[2].text)
 
-        if achievement_name != 'Unlocked by default':
+        try:
             new_character.achievement = Achievement.objects.get(
                 name=achievement_name)
+        except ObjectDoesNotExist:
+            pass
 
         character_html = requests.get(base_page + character_page)
         character_soup = BeautifulSoup(character_html.content, 'html.parser')
