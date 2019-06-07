@@ -62,3 +62,5 @@ urlpatterns = [
     path('', include(ROUTER.urls)),
     path('admin/', admin.site.urls),
 ]
+
+FAILING = 'this is a very long sentence and it might just go over the column limit by mistake'
