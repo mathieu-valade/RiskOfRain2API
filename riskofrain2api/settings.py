@@ -170,3 +170,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 if DEBUG:
     STATICFILES_STORAGE = \
         'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+SAVE_ROOT = 'save/'

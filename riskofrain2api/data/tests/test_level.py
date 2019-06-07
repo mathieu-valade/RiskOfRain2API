@@ -8,10 +8,6 @@ from riskofrain2api.data.scraper.levels import (
     clear_levels,
     get_levels
 )
-from riskofrain2api.data.scraper.achievements import (
-    clear_achievements,
-    get_achievements
-)
 
 
 class LevelTestCase(APITestCase):

@@ -45,13 +45,13 @@ ROUTER.register('build', BuildViewSet, basename='build')
 
 
 SCHEMA_VIEW = get_schema_view(
-   openapi.Info(
-      title="RiskOfRain2 API",
-      default_version='v1',
-      description="Risk Of Rain 2 wiki as an API",
-   ),
-   public=True,
-   permission_classes=(permissions.AllowAny,),
+    openapi.Info(
+        title="RiskOfRain2 API",
+        default_version='v1',
+        description="Risk Of Rain 2 wiki as an API",
+    ),
+    public=True,
+    permission_classes=(permissions.AllowAny,),
 )
 
 urlpatterns = [
