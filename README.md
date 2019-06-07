@@ -21,7 +21,7 @@ The second part of the project lets the user create a hypothetical build from gi
 
 ### Data
 
-You can navigate the wiki's API from the root.
+You can navigate the wiki's API from the root at the following address: https://riskofrain2wiki.herokuapp.com
 Data can be found under the following routes:
 - `/items`
 - `/achievements`
@@ -103,7 +103,7 @@ The packages `coverage` and `django-nose` enables us to run our testsuite and ou
 
 ### Snyk
 
-Snyk is used to check for vulnerabilities used packages, the result being displayed in a badge.
+Snyk is used to check for vulnerabilities used packages, and merge requests are created when new vulnerabilities are introduced.
 
 ### Sentry
 
