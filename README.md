@@ -1,8 +1,5 @@
 # RiskOfRain2 API
 
-[![Known Vulnerabilities](https://snyk.io/test/github/MathieuSoSlow/RiskOfRain2API/badge.svg?targetFile=requirements.txt)](https://snyk.io/test/github/MathieuSoSlow/RiskOfRain2API?targetFile=requirements.txt) [![pipeline status](https://gitlab.com/MathieuSoSlow/RiskOfRain2API/badges/master/pipeline.svg)](https://gitlab.com/MathieuSoSlow/RiskOfRain2API/commits/master) [![coverage report](https://gitlab.com/MathieuSoSlow/RiskOfRain2API/badges/master/coverage.svg)](https://gitlab.com/MathieuSoSlow/RiskOfRain2API/commits/master)
-
-
 ## What is Risk Of Rain 2
 
 Risk Of Rain 2 is a video game first available in late March 2019. It is a third-person shooter roguelike game. You can control a character, buy items and play through different levels.
