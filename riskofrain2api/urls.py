@@ -54,7 +54,13 @@ SCHEMA_VIEW = get_schema_view(
    permission_classes=(permissions.AllowAny,),
 )
 
+
+def trigger_error(request):
+    division_by_zero = 1 / 0
+
+
 urlpatterns = [
+    path('sentry-debug/', trigger_error),
     path(r'swagger.yaml', SCHEMA_VIEW.without_ui(cache_timeout=0),
          name='schema-json'),
     path(r'swagger/', SCHEMA_VIEW.with_ui('swagger', cache_timeout=0),
@@ -63,4 +69,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
-FAILING = 'this is a very long sentence and it might just go over the column limit by mistake'
+FAILING = 'this is a very long sentence and it might just go over the column limit by mistake asdasd'
