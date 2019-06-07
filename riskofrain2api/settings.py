@@ -84,10 +84,11 @@ if USE_LOCKDOWN:
     MIDDLEWARE += ('lockdown.middleware.LockdownMiddleware', )
     LOCKDOWN_PASSWORDS = env('LOCKDOWN_PASSWORDS')
 
-TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+# TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 NOSE_ARGS = [
     '--with-coverage', '--cover-package=riskofrain2api',
+    '-m', 'riskofrain2api/data/tests/*.py'
 ]
 
 ROOT_URLCONF = 'riskofrain2api.urls'
