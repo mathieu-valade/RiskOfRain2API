@@ -10,7 +10,7 @@ from riskofrain2api.data.scraper.enemies import (
 )
 
 
-class AchievementTestCase(APITestCase):
+class EnemyTestCase(APITestCase):
     enemy = {'icon': 'icon',
              'name': 'name',
              'health': 'health',

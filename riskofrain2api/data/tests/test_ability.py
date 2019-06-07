@@ -29,7 +29,8 @@ class AbilityTestCase(APITestCase):
                                              achievement=None)
         ability = Ability.objects.create(icon=self.ability['icon'],
                                          name=self.ability['name'],
-                                         description=self.ability['description'],
+                                         description=self.ability
+                                         ['description'],
                                          cooldown=self.ability['cooldown'],
                                          character=character)
         self.ability_id = ability.id

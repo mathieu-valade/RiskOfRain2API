@@ -14,7 +14,7 @@ from riskofrain2api.data.scraper.achievements import (
 )
 
 
-class AbilityTestCase(APITestCase):
+class CharacterTestCase(APITestCase):
 
     character = {'icon': 'icon',
                  'name': 'name',

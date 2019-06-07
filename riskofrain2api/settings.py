@@ -86,10 +86,9 @@ if USE_LOCKDOWN:
 
 # TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
-NOSE_ARGS = [
-    '--with-coverage', '--cover-package=riskofrain2api',
-    '-m', 'riskofrain2api/data/tests/*.py'
-]
+# NOSE_ARGS = [
+#     '--with-coverage', '--cover-package=riskofrain2api',
+# ]
 
 ROOT_URLCONF = 'riskofrain2api.urls'
 

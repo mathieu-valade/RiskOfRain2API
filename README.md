@@ -99,7 +99,7 @@ We use the GitLab pipeline to run our testsuite and check pep8 compliance. For d
 
 #### Code coverage
 
-The packages `coverage` and `django-nose` enables us to run our testsuite and output a code coverage percentage, which is displayed in a badge.
+Pytest enables us to run our testsuite and output a code coverage percentage, which is displayed in a badge.
 
 ### Snyk
 
