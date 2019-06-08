@@ -1,6 +1,7 @@
 import os
 from tablib import Dataset
 from import_export import resources
+from django.conf import settings
 from riskofrain2api.data.models import DataVersion
 from riskofrain2api.data.admin import (
     AbilityResource,
@@ -23,8 +24,7 @@ from riskofrain2api.data.scraper.core import (
     clear_data
 )
 
-
-SAVE_ROOT = 'save'
+SAVE_ROOT = settings.SAVE_ROOT
 
 RESOURCE_CLASS = {
     'achievement.json': AchievementResource(),
@@ -57,6 +57,7 @@ def export_data():
     for name, resource in RESOURCE_CLASS.items():
         dataset = resource.export()
         file_name = os.path.join(SAVE_ROOT, version_name, name)
+        print(file_name)
         with open(file_name, 'x') as save_file:
             save_file.write(dataset.json)
 

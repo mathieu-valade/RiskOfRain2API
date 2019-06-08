@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'riskofrain2api.data',
+    'riskofrain2api.wiki',
     'django_nose',
     'drf_yasg',
 ]
@@ -83,11 +84,11 @@ if USE_LOCKDOWN:
     MIDDLEWARE += ('lockdown.middleware.LockdownMiddleware', )
     LOCKDOWN_PASSWORDS = env('LOCKDOWN_PASSWORDS')
 
-TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+# TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
-NOSE_ARGS = [
-    '--with-coverage', '--cover-package=riskofrain2api'
-]
+# NOSE_ARGS = [
+#     '--with-coverage', '--cover-package=riskofrain2api',
+# ]
 
 ROOT_URLCONF = 'riskofrain2api.urls'
 
@@ -169,3 +170,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 if DEBUG:
     STATICFILES_STORAGE = \
         'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+SAVE_ROOT = 'save/'

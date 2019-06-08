@@ -22,7 +22,7 @@ test:
   script:
     - export DEBUG=True
     - export DATABASE_URL=postgres://postgres:@postgres:5432/python-test-app
-    - python manage.py test
+    - DJANGO_SETTINGS_MODULE=riskofrain2api.settings python -m pytest --cov=.
 
 deploy_staging:
   stage: deploy_staging
