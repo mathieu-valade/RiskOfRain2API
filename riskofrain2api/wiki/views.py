@@ -15,7 +15,7 @@ class BuildViewSet(viewsets.ViewSet):
         achievement_list = []
 
         for key, value in item_list.items():
-            stat = get_stats(key, value)
+            stat = get_stats(key, int(value))
             if stat is not None:
                 stat_list.append(stat)
             achievement = get_achievements(key)
