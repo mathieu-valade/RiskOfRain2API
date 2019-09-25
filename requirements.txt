@@ -1,5 +1,5 @@
 requests==2.21.0
-Django==2.1.7
+Django==2.1.11
 beautifulsoup4==4.7.1
 djangorestframework==3.9.4
 coreapi==2.3.3
