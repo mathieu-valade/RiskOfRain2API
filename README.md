@@ -4,6 +4,11 @@
 
 Risk Of Rain 2 is a video game first available in late March 2019. It is a third-person shooter roguelike game. You can control a character, buy items and play through different levels.
 
+## Disclaimer
+
+This project was made for a school assigment. The project is not hosted anymore on heroku.  
+Furthermore the project was originally hosted on GitLab to use the CI/CD. You can check it at the following link : https://gitlab.com/MathieuSoSlow/RiskOfRain2API
+
 ## Introduction
 
 RiskOfRain2 API aims to give access to a structured version of the data found on the website: https://riskofrain.fandom.com/wiki/Risk_of_Rain_2.
